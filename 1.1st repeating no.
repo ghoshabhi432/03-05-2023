@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	//ele->ind
+	unordered_map<int,int> mp;
+	
+	//input
+	int n;
+	cin>>n;
+	int arr[n];
+	for(int i=0;i<n;i++){
+	    cin>>arr[i];
+	}
+	
+	//question
+  //tc: 0(n) sc=0(n)
+	for(int i=0;i<n;i++){
+	    if(mp.find(arr[i])!=mp.end()){
+	        continue;
+	    }
+	    mp[arr[i]]=i+1;
+	}
+	for(int i=0;i<n;i++){
+	    if(mp.find(arr[i])!=mp.end() && mp[arr[i]]>1){
+	        cout<<mp[arr[i]];
+	        break;
+	    }
+	}
+	
+	return 0;
+}
